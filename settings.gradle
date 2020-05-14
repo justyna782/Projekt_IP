@@ -1,0 +1,3 @@
+rootProject.name='Learn_English'
+include ':app'
+include ':openCVLibrary345'
