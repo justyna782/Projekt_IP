@@ -20,20 +20,17 @@
             android:layout_marginRight="20dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_alignParentRight="true"
                 android:id="@+id/profile_image"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:src="@drawable/ic_face_black_24dp"
-                android:onClick="goToFind"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#FF000000"/>
+                android:onClick="goToFind" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/whitecolor"
                 android:textSize="22sp"
                 android:text="My Profile"/>
 
@@ -49,38 +46,42 @@
 
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/findId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                app:cardElevation="6dp"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="12dp"
+                android:onClick="goToFind"
                 app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                android:id="@+id/findId"
-                android:onClick="goToFind">
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:padding="16dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_alignParentRight="true"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
                         android:src="@drawable/find"
-                        app:civ_border_width="2dp"
-                        app:civ_border_color="#FF000000"/>
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#000000"
-                        android:textSize="22sp"
+                        android:layout_marginTop="12dp"
                         android:text="Find"
-                        android:layout_marginTop="12dp"/>
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

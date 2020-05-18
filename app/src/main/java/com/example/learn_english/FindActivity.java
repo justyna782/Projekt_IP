@@ -45,7 +45,7 @@ public class FindActivity extends AppCompatActivity implements  CameraBridgeView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find);
 
-        javaCameraView = (JavaCameraView) findViewById(R.id.CameraView);
+        javaCameraView = findViewById(R.id.CameraView);
         javaCameraView.setVisibility((SurfaceView.VISIBLE));
         javaCameraView.setCvCameraViewListener(FindActivity.this);
 

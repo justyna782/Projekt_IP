@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         else if(view.getId()==R.id.profile_image)
         {
-            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
             startActivity(intent);
         }
     }
