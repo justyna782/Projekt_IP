@@ -69,8 +69,8 @@
                     android:padding="16dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_alignParentRight="true"
                         android:src="@drawable/find"
                         app:civ_border_color="#FF000000"
@@ -97,7 +97,7 @@
                 app:cardElevation="6dp"
                 app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
-                android:id="@+id/repetitionId"
+                android:id="@+id/detectTextId"
                 android:onClick="goToFind">
 
                 <LinearLayout
@@ -106,21 +106,22 @@
                     android:gravity="center"
                     android:padding="16dp"
                     android:orientation="vertical">
+
                     <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_alignParentRight="true"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/repeat"
+                        android:src="@drawable/ic_text_fields_black_24dp"
+                        app:civ_border_color="#FF000000"
                         app:civ_border_width="2dp"
-                        app:civ_border_color="#FF000000"/>
+                        app:civ_circle_background_color="#FFC107" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:background="#FFFFFF"
-                        android:text="Fiszki"
+                        android:text="Wykryj tekst ze zdjęcia"
                         android:textColor="#000000"
                         android:textSize="22sp" />
                 </LinearLayout>
@@ -146,8 +147,8 @@
                     android:padding="16dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_alignParentRight="true"
                         android:src="@drawable/ic_translate_black_24dp"
                         app:civ_border_color="#FF000000"
