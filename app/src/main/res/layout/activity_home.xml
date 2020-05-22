@@ -12,27 +12,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"      >
-        <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_alignParentRight="true"
-                android:id="@+id/profile_image"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/ic_face_black_24dp"
-                android:onClick="goToFind" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Twój profil"
                 android:textColor="@color/whitecolor"
-                android:textSize="22sp"
-                android:text="My Profile"/>
+                android:textSize="22sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_alignParentRight="true"
+                android:onClick="goToFind"
+                android:src="@drawable/ic_face_black_24dp" />
 
 
         </RelativeLayout>
@@ -52,7 +54,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginBottom="12dp"
                 android:onClick="goToFind"
@@ -61,7 +63,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
@@ -78,7 +80,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Find"
+                        android:text="Znajdź obiekt"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -118,13 +120,51 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:background="#FFFFFF"
-                        android:text="Repetition"
+                        android:text="Fiszki"
                         android:textColor="#000000"
                         android:textSize="22sp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/translatorId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                android:onClick="goToFind"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_translate_black_24dp"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp"
+                        app:civ_circle_background_color="#FFC107" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="#FFFFFF"
+                        android:text="Tłumacz"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
         </GridLayout>
