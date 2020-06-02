@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
     <item
-        android:id="@+id/nav_tasks"
-        android:icon="@drawable/ic_check_box_black_24dp"
-        android:title="Tasks" />
+        android:id="@+id/nav_find"
+        android:icon="@drawable/find"
+        android:title="Znajdź obiekt" />
     <item
-        android:id="@+id/nav_goals"
-        android:icon="@drawable/ic_whatshot_black_24dp"
-        android:title="Goals" />
+        android:id="@+id/nav_detectTextId"
+        android:icon="@drawable/ic_text_fields_black_24dp"
+        android:title="Wykryj tekst ze zdjęcia" />
     <item
-        android:id="@+id/nav_list"
-        android:icon="@drawable/ic_star_border_black_24dp"
-        android:title="List" />
+        android:id="@+id/nav_translatorId"
+        android:icon="@drawable/ic_translate_black_24dp"
+        android:title="Tłumacz" />
+  </group>
+
+    <item android:title="Profile">
+
+    <menu>
+
+
+
+
+            <item
+                android:id="@+id/nav_profile"
+                android:title="Profile" />
+
+
+    </menu>
+    </item>
 </menu>

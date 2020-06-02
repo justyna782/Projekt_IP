@@ -111,13 +111,11 @@ public class Labeling extends AppCompatActivity {
                         @Override
                         public void onSuccess(List<FirebaseVisionImageLabel> firebaseVisionImageLabels)
                         {
-                            stringBuilder.append("Image label: ").append("\n");
+                            stringBuilder.append("Wykryto:  ");
+                            double percent = Math.round(firebaseVisionImageLabels.get(0).getConfidence() * 100.0) ;
 
-                            for(FirebaseVisionImageLabel label: firebaseVisionImageLabels)
-                            {
-                                stringBuilder.append("Text: ").append(label.getText()).append(",\n").append(" Confidence: ").append(label.getConfidence()).append(",\n");
+                            stringBuilder.append(firebaseVisionImageLabels.get(0).getText()).append(",\n").append(" Poprawność: ").append(percent).append("%,\n");
 
-                            }
 
                             detectedText.setText(stringBuilder.toString());
 
