@@ -33,11 +33,14 @@
         app:layout_constraintTop_toBottomOf="@+id/image_view" />
 
     <ScrollView
-        android:layout_width="410dp"
-        android:layout_height="377dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pick_image_btn"
-        tools:layout_editor_absoluteX="0dp"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -54,14 +57,14 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
-                android:textColor="@color/colorWhite" />
+                android:textColor="@color/whitecolor" />
 
             <TextView
                 android:id="@+id/translator_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
-                android:textColor="@color/colorWhite" />
+                android:textColor="@color/whitecolor" />
         </LinearLayout>
     </ScrollView>
 

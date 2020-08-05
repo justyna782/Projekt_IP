@@ -76,7 +76,7 @@
             android:background="@drawable/rounded_button"
             android:padding="15dp"
             android:text="Zarejestruj"
-            android:textColor="@color/whitecolor"/>
+            android:textColor="@color/colorWhite"/>
 
         <TextView
             android:id="@+id/tvUserLogin"

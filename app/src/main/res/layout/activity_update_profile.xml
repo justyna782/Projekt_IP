@@ -65,7 +65,7 @@
             android:paddingLeft="35dp"
             android:paddingRight="35dp"
             android:text="Zapisz"
-            android:textColor="@color/whitecolor" />
+            android:textColor="@color/colorWhite" />
 
     </LinearLayout>
 

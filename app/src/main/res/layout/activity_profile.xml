@@ -149,7 +149,7 @@
         android:background="@drawable/rounded_button"
         android:padding="15dp"
         android:text="Edytuj dane"
-        android:textColor="@color/whitecolor"/>
+        android:textColor="@color/colorWhite"/>
 
     <Button
         android:id="@+id/btnChangePassword"
@@ -161,7 +161,7 @@
         android:background="@drawable/rounded_button"
         android:padding="15dp"
         android:text="Zmień hasło"
-        android:textColor="@color/whitecolor"/>
+        android:textColor="@color/colorWhite"/>
 
     <Button
         android:id="@+id/btnLogout"
@@ -174,5 +174,5 @@
         android:background="@drawable/rounded_button"
         android:padding="15dp"
         android:text="Wyloguj"
-        android:textColor="@color/whitecolor"/>
+        android:textColor="@color/colorWhite"/>
 </LinearLayout>

@@ -56,7 +56,7 @@
                 android:paddingLeft="35dp"
                 android:paddingRight="35dp"
                 android:text="TAK"
-                android:textColor="@color/whitecolor" />
+                android:textColor="@color/colorWhite" />
 
             <Button
                 android:id="@+id/btnMenu"
@@ -67,7 +67,7 @@
                 android:paddingLeft="35dp"
                 android:paddingRight="35dp"
                 android:text="NIE"
-                android:textColor="@color/whitecolor"/>
+                android:textColor="@color/colorWhite"/>
         </LinearLayout>
 
     </LinearLayout>

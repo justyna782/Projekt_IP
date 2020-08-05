@@ -104,20 +104,26 @@ public class Labeling extends AppCompatActivity {
 
                     FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(BitmapFactory.decodeFile(finalFilePath));
 
-                 ///!!!!!!!
+                    ///!!!!!!!
                     FirebaseVisionImageLabeler dectector = FirebaseVision.getInstance().getOnDeviceImageLabeler();
                     dectector.processImage(image).addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionImageLabel>>()
                     {
                         @Override
                         public void onSuccess(List<FirebaseVisionImageLabel> firebaseVisionImageLabels)
                         {
-                            stringBuilder.append("Wykryto:  ");
-                            double percent = Math.round(firebaseVisionImageLabels.get(0).getConfidence() * 100.0) ;
 
-                            stringBuilder.append(firebaseVisionImageLabels.get(0).getText()).append(",\n").append(" Poprawność: ").append(percent).append("%,\n");
-
+                            for(FirebaseVisionImageLabel label: firebaseVisionImageLabels)
+                            {
+                                double percent = Math.round(label.getConfidence() * 100) ;
+                                stringBuilder.append("Image label: ").append(label.getText()).append("\n").append("Precision: ").append(percent).append("% \n");
+                            }
 
                             detectedText.setText(stringBuilder.toString());
+
+
+
+
+
 
                         }
                     });
@@ -126,7 +132,6 @@ public class Labeling extends AppCompatActivity {
         }
 
     }
-
 
     @Override
     protected void onStart()

@@ -42,7 +42,7 @@ public class DetectText extends AppCompatActivity {
     private ImageView imageView;
     private StringBuilder stringBuilder=new StringBuilder();
 
-private FirebaseLanguageIdentification firebaseLanguageIdentification;
+    private FirebaseLanguageIdentification firebaseLanguageIdentification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,64 +84,64 @@ private FirebaseLanguageIdentification firebaseLanguageIdentification;
             }
         }
     }
-        @Override
-        protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-            super.onActivityResult(requestCode,resultCode,data);
-            if (resultCode==RESULT_OK)
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+        if (resultCode==RESULT_OK)
+        {
+            if(requestCode==1)
             {
-                if(requestCode==1)
-                {
-                    Uri uri = data.getData();
+                Uri uri = data.getData();
 
-                    if(uri!=null) {
-                        String [] filePath={MediaStore.Images.Media.DATA};
-                        Cursor cursor = getContentResolver().query(uri, filePath, null, null, null);
-                        cursor.moveToFirst();
+                if(uri!=null) {
+                    String [] filePath={MediaStore.Images.Media.DATA};
+                    Cursor cursor = getContentResolver().query(uri, filePath, null, null, null);
+                    cursor.moveToFirst();
 
-                        int index=cursor.getColumnIndex(filePath[0]);
-                        String finalFilePath=cursor.getString(index);
+                    int index=cursor.getColumnIndex(filePath[0]);
+                    String finalFilePath=cursor.getString(index);
 
-                        cursor.close();
-                        imageView.setImageBitmap(BitmapFactory.decodeFile(finalFilePath));
+                    cursor.close();
+                    imageView.setImageBitmap(BitmapFactory.decodeFile(finalFilePath));
 
-                        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(BitmapFactory.decodeFile(finalFilePath));
-                        FirebaseVisionTextRecognizer dectector = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
-                        dectector.processImage(image).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>()
+                    FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(BitmapFactory.decodeFile(finalFilePath));
+                    FirebaseVisionTextRecognizer dectector = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
+                    dectector.processImage(image).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>()
+                    {
+                        @Override
+                        public void onSuccess(FirebaseVisionText firebaseVisionText)
                         {
-                            @Override
-                            public void onSuccess(FirebaseVisionText firebaseVisionText)
-                            {
-                                String text = firebaseVisionText.getText();
-                                stringBuilder.append("Detected text: ").append(text).append("\n");
-                                detectedText.setText(stringBuilder.toString());
-                                translate();
-                            }
-                        });
-                    }
+                            String text = firebaseVisionText.getText();
+                            stringBuilder.append("Detected text: ").append(text).append("\n");
+                            detectedText.setText(stringBuilder.toString());
+                            translate();
+                        }
+                    });
                 }
             }
-
         }
 
+    }
 
-        @Override
-        protected void onStart()
+
+    @Override
+    protected void onStart()
     {
-            super.onStart();
+        super.onStart();
 
-            FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-            if (firebaseUser==null)
-            {
-                signInUser();
-            }
-        }
-
-        private void signInUser()
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        if (firebaseUser==null)
         {
-            Intent intent = new Intent(DetectText.this,LoginActivity.class);
-         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-         startActivity(intent);
+            signInUser();
         }
+    }
+
+    private void signInUser()
+    {
+        Intent intent = new Intent(DetectText.this,LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
     private  void translate() {
         FirebaseTranslatorOptions options =
@@ -191,5 +191,5 @@ private FirebaseLanguageIdentification firebaseLanguageIdentification;
 
     }
 
-    }
+}
 
