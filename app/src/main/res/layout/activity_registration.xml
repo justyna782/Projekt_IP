@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@color/whitecolor"
     tools:context=".RegistrationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,13 +18,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/ic_face_black_24dp"  />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_size_apps" />
 
         <EditText
             android:id="@+id/etUserName"
@@ -37,7 +33,7 @@
             android:ems="10"
             android:hint="Imię"
             android:inputType="textPersonName"
-            android:textColor="@color/whitecolor" />
+            android:textColor="@color/defaulBlue" />
 
         <EditText
             android:id="@+id/etUserEmail"
@@ -50,7 +46,7 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/whitecolor"/>
+            android:textColor="@color/defaulBlue"/>
 
         <EditText
             android:id="@+id/etUserPassword"
@@ -63,15 +59,12 @@
             android:ems="10"
             android:hint="Hasło"
             android:inputType="textPassword"
-            android:textColor="@color/whitecolor" />
+            android:textColor="@color/defaulBlue" />
 
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="wrap_content"
+            android:layout_width="291dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="20dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/rounded_button"
             android:padding="15dp"
@@ -87,7 +80,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="Wróć do logowania"
-            android:textColor="@color/whitecolor"
+            android:textColor="@color/defaulBlue"
             android:textSize="22dp" />
     </LinearLayout>
 

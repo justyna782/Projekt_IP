@@ -1,9 +1,25 @@
 <resources>
-    <string name="app_name">Learn_English</string>
+    <string name="app_name">eBiom</string>
     <string name="email">Email</string>
     <string name="sign_up">Sign Up</string>
     <string name="password">Password</string>
     <string name="log_in">Log In</string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
+    <string name="Odzyskiwanie">Odzyskiwanie hasła</string>
+    <string name="OdzyskiwanieInfo">Podaj adres e-mail. Zostanie wygenerowana wiadomość z odnosnikiem umożliwiającym utworzenie nowego hasła</string>
+    <string name="NoweHaslo">Wpisz nowe hasło</string>
+    <string name="title_activity_home_correct">activity_homeCorrect</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_detectText">Tłumacz z zdjęcia</string>
+    <string name="menu_translate">Tłumacz</string>
+    <string name="menu_findObject">Znajdzź obiekt</string>
+    <string name="menu_flaszCard">Fiszki</string>
+    <string name="flashCard_EnglishText">Słówko po angielsku</string>
+    <string name="flashCard_PolishText">Polskie znaczenie</string>
 </resources>

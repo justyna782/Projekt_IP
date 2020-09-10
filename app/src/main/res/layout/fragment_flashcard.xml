@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".ui.AddFlashCard.AddFlashCardView">
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|top"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_above="@id/bottom_button"
+                    android:layout_below="@id/top_layout"
+                    android:orientation="horizontal"
+                    android:id="@+id/view2"
+                    app:cardCornerRadius="360dp"
+                    android:innerRadius="0dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="20dp"
+                    android:shape="ring"
+                    android:outlineAmbientShadowColor="@color/defaulBlue"
+                    android:outlineSpotShadowColor="@color/defaulBlue"
+                    android:thicknessRatio="5">
+                    <ImageView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:id="@+id/image_view"
+
+                        android:src="@drawable/logo_size_big"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true">
+                    </ImageView>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/word_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:text="Jakiś tam tekkst do odkrycia"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/Check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/rounded_button"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text="Sprawdź"
+                    android:textColor="@color/colorWhite" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

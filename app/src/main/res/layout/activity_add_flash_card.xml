@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.AddFlashCard.AddFlashCardView">
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/flashCard_EnglishText" />
+
+        <EditText
+            android:id="@+id/TextEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="aaaaa"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/flashCard_PolishText"/>
+
+        <EditText
+            android:id="@+id/TextPolish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Answer" />
+
+    </LinearLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_button"
+        android:layout_below="@id/top_layout"
+        android:orientation="horizontal"
+        android:id="@+id/view2"
+        app:cardCornerRadius="150dp"
+        android:innerRadius="0dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="70dp"
+        android:shape="ring"
+        android:outlineAmbientShadowColor="@color/defaulBlue"
+        android:thicknessRatio="5">
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/imageView1"
+            android:src="@drawable/logo_size_big"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+        </ImageView>
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:id="@+id/bottom_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:background="@drawable/rounded_button"
+        android:text="Dodaj fiszkę" />
+</RelativeLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/har"
     tools:context=".Logout">
 
 
@@ -22,7 +22,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="30dp"
-            android:src="@drawable/ic_face_black_24dp" />
+            android:src="@drawable/logo_size_apps" />
 
         <TextView
             android:id="@+id/textView"
@@ -34,7 +34,7 @@
             android:layout_marginBottom="8dp"
             android:gravity="center"
             android:text="Czy na pewno chcesz się wylogować?"
-            android:textColor="@color/whitecolor"
+            android:textColor="@color/defaulBlue"
             android:textSize="32sp" />
 
         <LinearLayout

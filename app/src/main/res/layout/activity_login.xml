@@ -1,60 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    tools:context=".Login">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.example.learn_english.viewModel.LoginViewModel" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/ic_face_black_24dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_size_apps" />
 
         <EditText
             android:id="@+id/etName"
-            android:layout_width="242dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:hint="Email"
             android:inputType="textPersonName"
-            android:textColor="@color/whitecolor" />
-
+            android:textColor="@color/defaulBlue" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <EditText
             android:id="@+id/etPassword"
-            android:layout_width="245dp"
-            android:layout_height="46dp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:ems="10"
             android:hint="Hasło"
             android:inputType="textPassword"
-            android:textColor="@color/whitecolor" />
-
+            android:textColor="@color/defaulBlue" />
+        <ImageButton
+            android:id="@+id/pastePin"
+            android:layout_marginLeft="-60dp"
+            style="?android:buttonBarButtonStyle"
+            android:paddingBottom="5dp"
+            android:src="@drawable/visibility_password"
+            android:onClick="onButtonClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/rounded_button"
-            android:padding="15dp"
             android:text="Zaloguj się"
             android:textColor="@color/colorWhite" />
 
@@ -65,7 +71,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp"
             android:text="Liczba pozostałych prób:  "
-            android:textColor="@color/whitecolor"/>
+            android:textColor="@color/defaulBlue" />
 
         <TextView
             android:id="@+id/tvForgotPassword"
@@ -76,7 +82,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="5dp"
             android:text="Nie pamiętasz hasła?"
-            android:textColor="@color/whitecolor" />
+            android:textColor="@color/defaulBlue" />
 
         <TextView
             android:id="@+id/tvRegister"
@@ -84,9 +90,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Utwórz nowe konto"
-            android:textColor="@color/whitecolor"
+            android:textColor="@color/defaulBlue"
             android:textSize="22sp" />
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

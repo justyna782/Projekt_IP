@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     android:background="@drawable/background"
+
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
         android:layout_marginRight="20dp">
 
         <TextView
             android:id="@+id/tvProfileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="left"
-            android:text="Twój profil"
-            android:textColor="@color/whitecolor"
-            android:textSize="22sp" />
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginRight="74dp"
+            android:layout_toEndOf="@+id/profile_image"
+            android:layout_toRightOf="@+id/profile_image"
+            android:text="Imię nazwisko"
+            android:textColor="@color/defaulBlue"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvProfileName"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="74dp"
+            android:layout_toEndOf="@+id/profile_image"
+            android:layout_toRightOf="@+id/profile_image"
+            android:text="ImięNazwisko@interia.com"
+            android:textColor="@color/defaulBlue"
+            android:textSize="10dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_face_black_24dp" />
+            android:src="@drawable/logo_size_apps" />
 
 
     </RelativeLayout>

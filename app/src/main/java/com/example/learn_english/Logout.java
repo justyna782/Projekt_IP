@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.learn_english.ui.home.HomeView;
+import com.example.learn_english.view.Login;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Logout extends AppCompatActivity {
@@ -31,7 +34,7 @@ public class Logout extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(Logout.this, HomeActivity.class);
+                Intent startIntent = new Intent(Logout.this, HomeView.class);
                 startActivity(startIntent);
             }
         });

@@ -8,9 +8,10 @@
     <color name="colorPurpleT">#64983cff</color>
     <color name="colorBlue">#2FB4FF</color>
     <color name="colorBlueT">#642fb4ff</color>
-	 <color name="blackcolor">#111111</color>
+    <color name="blackcolor">#111111</color>
     <color name="greencolor">#0000FF</color>
     <color name="lightwhite">#F5F5F3</color>
-    <color name="whitecolor">#146CB3</color>
+    <color name="whitecolor">#fff</color>
     <color name="fullwhite">#C6C6C6</color>
+    <color name="defaulBlue">#426CB4</color>
 </resources>

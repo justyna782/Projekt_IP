@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@color/whitecolor"
     tools:context=".UpdateProfile">
 
 
@@ -19,13 +19,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/ic_face_black_24dp"  />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_size_apps" />
 
         <EditText
             android:id="@+id/etNameUpdate"
@@ -38,7 +34,7 @@
             android:ems="10"
             android:hint="Imię"
             android:inputType="textPersonName"
-            android:textColor="@color/whitecolor" />
+            android:textColor="@color/defaulBlue" />
 
         <EditText
             android:id="@+id/etEmailUpdate"
@@ -51,7 +47,7 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/whitecolor" />
+            android:textColor="@color/defaulBlue" />
 
         <Button
             android:id="@+id/btnSave"

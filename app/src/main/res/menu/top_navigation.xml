@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
     <group>
     <item
         android:id="@+id/nav_find"
@@ -9,6 +11,10 @@
         android:id="@+id/nav_detectTextId"
         android:icon="@drawable/ic_text_fields_black_24dp"
         android:title="Wykryj tekst ze zdjęcia" />
+        <item
+            android:id="@+id/nav_flashcard"
+            android:icon="@drawable/ic_text_fields_black_24dp"
+            android:title="Fiszki" />
     <item
         android:id="@+id/nav_translatorId"
         android:icon="@drawable/ic_translate_black_24dp"
@@ -18,14 +24,9 @@
     <item android:title="Profile">
 
     <menu>
-
-
-
-
             <item
                 android:id="@+id/nav_profile"
                 android:title="Profile" />
-
 
     </menu>
     </item>
