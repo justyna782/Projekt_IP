@@ -3,7 +3,6 @@ package com.example.learn_english;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +24,7 @@ import java.util.Set;
 public class Translator extends AppCompatActivity {
 
     private EditText mSourcetext;
-    private Button mTranslateBtn;
+    private Button mTranslateBtn, changeLanguages;
     private TextView mTranslatedText;
     private String sourceText;
 
@@ -33,15 +32,28 @@ public class Translator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translator);
-        mSourcetext = findViewById(R.id.word_pl);
+        mSourcetext = findViewById(R.id.word_to_translate);
         mTranslateBtn = findViewById(R.id.btnTranstale);
-        mTranslatedText = findViewById(R.id.word_en);
+        mTranslatedText = findViewById(R.id.word_after_translation);
+        changeLanguages = findViewById(R.id.change_languages);
 
 
         mTranslateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 translate();
+            }
+        });
+
+        changeLanguages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CharSequence lang = changeLanguages.getText();
+                if (lang.equals("PL -> EN"))
+                {
+                    changeLanguages.setText("EN -> PL");
+                }
+
             }
         });
 
@@ -52,13 +64,13 @@ public class Translator extends AppCompatActivity {
                         .setSourceLanguage(FirebaseTranslateLanguage.PL)
                         .setTargetLanguage(FirebaseTranslateLanguage.EN)
                         .build();
-        final FirebaseTranslator englishGermanTranslator =
+        final FirebaseTranslator polishEnglishTranslator =
                 FirebaseNaturalLanguage.getInstance().getTranslator(options);
 
         FirebaseModelDownloadConditions conditions = new FirebaseModelDownloadConditions.Builder()
                 .requireWifi()
                 .build();
-        englishGermanTranslator.downloadModelIfNeeded(conditions)
+        polishEnglishTranslator.downloadModelIfNeeded(conditions)
                 .addOnSuccessListener(
                         new OnSuccessListener<Void>() {
                             @Override
@@ -76,7 +88,7 @@ public class Translator extends AppCompatActivity {
                             }
                         });
         sourceText = mSourcetext.getText().toString();
-        englishGermanTranslator.translate(sourceText)
+        polishEnglishTranslator.translate(sourceText)
                 .addOnSuccessListener(
                         new OnSuccessListener<String>() {
                             @Override
@@ -91,6 +103,10 @@ public class Translator extends AppCompatActivity {
                                 mTranslatedText.setText("błąd");
                             }
                         });
+
+
+
+
 
         FirebaseModelManager modelManager = FirebaseModelManager.getInstance();
 

@@ -46,18 +46,15 @@
                 android:orientation="vertical"
                 android:paddingBottom="20dp">
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginBottom="50dp"
                     android:text="PL -> EN"
-                    android:textColor="@color/blackcolor"
                     android:textSize="30sp" />
 
                 <EditText
-                    android:id="@+id/word_pl"
+                    android:id="@+id/word_to_translate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -80,7 +77,7 @@
                     android:textColor="@color/colorWhite" />
 
                 <TextView
-                    android:id="@+id/word_en"
+                    android:id="@+id/word_after_translation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/blackcolor"
