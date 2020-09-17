@@ -94,7 +94,7 @@ public class Login extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     progressDialog.dismiss();
                     Toast.makeText(Login.this, "Zalogowano pomyślnie", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(com.example.learn_english.view.Login.this, HomeView.class));
+                    startActivity(new Intent(com.example.learn_english.view.Login.this, activity_homeCorrect.class));
 
                 } else {
                     Toast.makeText(com.example.learn_english.view.Login.this, "Błąd logowania!", Toast.LENGTH_SHORT).show();

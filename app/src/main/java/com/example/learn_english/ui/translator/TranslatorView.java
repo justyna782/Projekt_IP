@@ -11,9 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import com.example.learn_english.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,13 +24,16 @@ import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOption
 
 import java.util.Set;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 public class TranslatorView extends Fragment {
 
     private EditText mSourcetext;
-    private Button mTranslateBtn,changeLanguages;
+    private Button mTranslateBtn, changeLanguages;
     private TextView mTranslatedText;
     private String sourceText;
-    private CharSequence lang,word_to_translate,word_after_translation ;
+    private CharSequence lang, word_to_translate, word_after_translation;
 
     Activity activity;
 
@@ -41,8 +41,6 @@ public class TranslatorView extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        findModelViewModel =
-//                ViewModelProviders.of(this).get(FindModelViewModel.class);
         activity = this.getActivity();
         View root = inflater.inflate(R.layout.fragment_translator, container, false);
 
@@ -51,25 +49,20 @@ public class TranslatorView extends Fragment {
         mTranslatedText = root.findViewById(R.id.word_after_translation);
         changeLanguages = root.findViewById(R.id.change_languages);
 
-
-
         changeLanguages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 lang = changeLanguages.getText();
-                word_after_translation=mTranslatedText.getText();
-                word_to_translate=mSourcetext.getText();
+                word_after_translation = mTranslatedText.getText();
+                word_to_translate = mSourcetext.getText();
 
-                if (lang.equals("PL -> EN"))
-                {
+                if (lang.equals("PL -> EN")) {
                     changeLanguages.setText("EN -> PL");
 
-                }
-                else{
+                } else {
                     changeLanguages.setText("PL -> EN");
                 }
-                if(!TextUtils.isEmpty(word_after_translation) && !TextUtils.isEmpty(word_to_translate) )
-                {
+                if (!TextUtils.isEmpty(word_after_translation) && !TextUtils.isEmpty(word_to_translate)) {
                     mTranslatedText.setText(word_to_translate);
                     mSourcetext.setText(word_after_translation);
                 }
@@ -81,12 +74,10 @@ public class TranslatorView extends Fragment {
             @Override
             public void onClick(View v) {
                 lang = changeLanguages.getText();
-                if (lang.equals("PL -> EN"))
-                {
-                translatePlEn();
-                }
-                else{
-                translateEnPl();
+                if (lang.equals("PL -> EN")) {
+                    translatePlEn();
+                } else {
+                    translateEnPl();
                 }
             }
         });
@@ -275,24 +266,7 @@ public class TranslatorView extends Fragment {
                     }
                 });
 
-//// Delete  model if it's on the device.
-//        FirebaseTranslateRemoteModel deModel =
-//                new FirebaseTranslateRemoteModel.Builder(FirebaseTranslateLanguage.DE).build();
-//        modelManager.deleteDownloadedModel(deModel)
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void v) {
-//                        // Model deleted.
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        // Error.
-//                    }
-//                });
 
-// Download  model.
         FirebaseTranslateRemoteModel enModel =
                 new FirebaseTranslateRemoteModel.Builder(FirebaseTranslateLanguage.EN).build();
         FirebaseModelDownloadConditions conditions2 = new FirebaseModelDownloadConditions.Builder()
