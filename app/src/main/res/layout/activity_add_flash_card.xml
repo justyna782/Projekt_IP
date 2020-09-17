@@ -20,7 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="10dp">
@@ -50,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="30dp"
                 android:hint="Answer" />
 
             <androidx.cardview.widget.CardView
@@ -57,8 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:layout_marginHorizontal="40dp"
-                android:layout_marginVertical="70dp"
-                android:innerRadius="0dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginTop="30dp"
                 android:orientation="horizontal"
                 android:outlineAmbientShadowColor="@color/defaulBlue"
                 android:shape="ring"
@@ -68,7 +69,7 @@
                 <ImageView
                     android:id="@+id/imageView1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/logo_size_big"></ImageView>
@@ -76,15 +77,15 @@
 
             <Button
                 android:id="@+id/bottom_button"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/rounded_button"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
                 android:text="Dodaj fiszkę"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
