@@ -10,12 +10,16 @@
     android:fitsSystemWindows="true"
     tools:context=".HomeActivity"
     tools:openDrawer="start">
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_gravity="start"
-        android:layout_height="match_parent"
         android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
         app:headerLayout="@layout/header"
+        app:insetForeground="@color/design_default_color_primary_dark"
+        app:itemIconTint="@color/defaulBlue"
+        app:itemTextColor="@color/defaulBlue"
         app:menu="@menu/top_navigation" />
 
 <ScrollView

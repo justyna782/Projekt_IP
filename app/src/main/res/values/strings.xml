@@ -13,12 +13,13 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="profile">Twój profil</string>
+    <string name="log_out">Wyloguj</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_detectText">Tłumacz z zdjęcia</string>
     <string name="menu_translate">Tłumacz</string>
-    <string name="menu_findObject">Znajdzź obiekt</string>
+    <string name="menu_findObject">Znajdź obiekt</string>
     <string name="menu_flaszCard">Fiszki</string>
     <string name="flashCard_EnglishText">Słówko po angielsku</string>
     <string name="flashCard_PolishText">Polskie znaczenie</string>

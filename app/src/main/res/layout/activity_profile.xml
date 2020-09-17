@@ -16,15 +16,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/gradient"
+            android:gravity="center"
             android:orientation="vertical"
+            android:paddingTop="60dp"
             android:paddingBottom="60dp">
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="45dp"
-                android:src="@drawable/ic_face_black_24dp" />
+                android:id="@+id/imageView2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="30dp"
+                app:srcCompat="@drawable/logo_size_big" />
 
             <TextView
                 android:id="@+id/tvProfileName"
@@ -32,20 +34,20 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="Imię"
-                android:textColor="@color/whitecolor"
-                android:textSize="21sp"
-                android:textStyle="bold" />
+                android:textColor="@color/defaulBlue"
+                android:textSize="21sp" />
 
             <TextView
                 android:id="@+id/tvProfileEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="50dp"
                 android:text="Email"
-                android:textColor="@color/whitecolor"
-                android:textSize="21sp"
-                android:textStyle="bold" />
+                android:textColor="@color/defaulBlue"
+                android:textSize="21sp" />
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
@@ -139,40 +141,35 @@
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/btnProfileUpdate"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/rounded_button"
-        android:padding="15dp"
-        android:text="Edytuj dane"
-        android:textColor="@color/colorWhite"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnChangePassword"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/rounded_button"
-        android:padding="15dp"
-        android:text="Zmień hasło"
-        android:textColor="@color/colorWhite"/>
+        <Button
+            android:id="@+id/btnProfileUpdate"
+            android:layout_width="291dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_button"
+            android:padding="15dp"
+            android:text="Edytuj dane"
+            android:textColor="@color/colorWhite" />
 
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/rounded_button"
-        android:padding="15dp"
-        android:text="Wyloguj"
-        android:textColor="@color/colorWhite"/>
+        <Button
+            android:id="@+id/btnChangePassword"
+            android:layout_width="291dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_button"
+            android:padding="15dp"
+            android:text="Zmień hasło"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
+
 </LinearLayout>

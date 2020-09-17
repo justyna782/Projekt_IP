@@ -4,66 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whitecolor"
+    android:background="@drawable/gradient"
     tools:context=".UpdateProfile">
 
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_margin="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo_size_apps" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etNameUpdate"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:hint="Imię"
-            android:inputType="textPersonName"
-            android:textColor="@color/defaulBlue" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/logo_size_big" />
 
-        <EditText
-            android:id="@+id/etEmailUpdate"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/defaulBlue" />
+            <EditText
+                android:id="@+id/etNameUpdate"
+                android:layout_width="268dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="Imię"
+                android:inputType="textPersonName"
+                android:textColor="@color/defaulBlue" />
 
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="52dp"
-            android:background="@drawable/rounded_button"
-            android:paddingLeft="35dp"
-            android:paddingRight="35dp"
-            android:text="Zapisz"
-            android:textColor="@color/colorWhite" />
+            <EditText
+                android:id="@+id/etEmailUpdate"
+                android:layout_width="268dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/defaulBlue" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="291dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="52dp"
+                android:background="@drawable/rounded_button"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp"
+                android:text="Zapisz"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

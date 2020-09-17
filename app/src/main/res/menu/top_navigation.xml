@@ -3,31 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
     <group>
-    <item
-        android:id="@+id/nav_find"
-        android:icon="@drawable/find"
-        android:title="Znajdź obiekt" />
-    <item
-        android:id="@+id/nav_detectTextId"
-        android:icon="@drawable/ic_text_fields_black_24dp"
-        android:title="Wykryj tekst ze zdjęcia" />
+        <item
+            android:id="@+id/nav_find"
+            android:icon="@drawable/ic_baseline_find_in_page_24"
+            android:title="Znajdź obiekt" />
+        <item
+            android:id="@+id/nav_detectTextId"
+            android:icon="@drawable/ic_baseline_text_fields_24"
+            android:title="Wykryj tekst ze zdjęcia" />
         <item
             android:id="@+id/nav_flashcard"
-            android:icon="@drawable/ic_text_fields_black_24dp"
+            android:icon="@drawable/ic_baseline_school_24"
             android:title="Fiszki" />
-    <item
-        android:id="@+id/nav_translatorId"
-        android:icon="@drawable/ic_translate_black_24dp"
-        android:title="Tłumacz" />
+        <item
+            android:id="@+id/nav_translatorId"
+            android:icon="@drawable/ic_baseline_g_translate_24"
+            android:title="Tłumacz" />
   </group>
 
-    <item android:title="Profile">
+    <item android:visible="false">
 
-    <menu>
+        <menu>
             <item
                 android:id="@+id/nav_profile"
-                android:title="Profile" />
+                android:title="Profil" />
 
-    </menu>
+        </menu>
     </item>
 </menu>

@@ -34,7 +34,7 @@ public class Logout extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(Logout.this, HomeView.class);
+                Intent startIntent = new Intent(Logout.this, activity_homeCorrect.class);
                 startActivity(startIntent);
             }
         });

@@ -23,6 +23,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center|top"
                 android:orientation="vertical">
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
@@ -63,7 +64,7 @@
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="textPersonName"
-                    android:text="Jakiś tam tekkst do odkrycia"
+                    android:text="Jakiś tam tekst do odkrycia"
                     android:textColor="@color/blackcolor"
                     android:textSize="24sp" />
 

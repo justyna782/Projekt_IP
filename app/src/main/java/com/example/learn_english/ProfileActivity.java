@@ -70,12 +70,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ProfileActivity.this, Logout.class));
-            }
-        });
     }
 
 }

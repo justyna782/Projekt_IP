@@ -23,7 +23,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/greencolor"
+            android:background="@color/defaulBlue"
             android:gravity="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
@@ -64,11 +64,12 @@
                     android:gravity="center"
                     android:inputType="textPersonName"
                     android:textColor="@color/blackcolor"
+                    android:textColorLink="#FFFFFF"
                     android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/btnTranstale"
-                    android:layout_width="wrap_content"
+                    android:layout_width="291dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
