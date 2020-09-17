@@ -52,7 +52,7 @@ public class FlashCardView
 //                ViewModelProviders.of(this).get(FindModelViewModel.class);
         activity = this.getActivity();
         View root = inflater.inflate(R.layout.fragment_flashcard, container, false);
-text = root.findViewById(R.id.Text);
+        text = root.findViewById(R.id.Text);
         imageView = root.findViewById(R.id.image_view);
         setTry(3);
         checkbuton = root.findViewById(R.id.Check);

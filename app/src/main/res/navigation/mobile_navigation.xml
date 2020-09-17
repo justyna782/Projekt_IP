@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_flashcard">
+    app:startDestination="@+id/nav_profile">
 
     <fragment
         android:id="@+id/nav_detectTextId"
@@ -29,4 +29,10 @@
         android:label="@string/menu_flaszCard"
         tools:layout="@layout/fragment_flashcard" >
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.learn_english.ui.home.ProfileView"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -54,7 +54,7 @@ public class activity_homeCorrect extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_find, R.id.nav_detectTextId, R.id.nav_flashcard, R.id.nav_translatorId)
+              R.id.nav_profile,  R.id.nav_find, R.id.nav_detectTextId, R.id.nav_flashcard, R.id.nav_translatorId)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -108,11 +108,15 @@ public class activity_homeCorrect extends AppCompatActivity {
             Intent startIntent = new Intent(getApplicationContext(), Logout.class);
             startActivity(startIntent);
 
-        } else if (id == R.id.profile) {
+        } else if (id == R.id.edit_profile) {
 
-            Intent startIntent = new Intent(getApplicationContext(), ProfileActivity.class);
+            Intent startIntent = new Intent(getApplicationContext(), UpdateProfile.class);
             startActivity(startIntent);
-        }
+        } else if (id == R.id.change_password) {
+
+        Intent startIntent = new Intent(getApplicationContext(), UpdatePassword.class);
+        startActivity(startIntent);
+    }
 
         return super.onOptionsItemSelected(item);
     }
