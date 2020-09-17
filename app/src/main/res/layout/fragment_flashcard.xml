@@ -25,29 +25,25 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:layout_above="@id/bottom_button"
-                    android:layout_below="@id/top_layout"
-                    android:orientation="horizontal"
                     android:id="@+id/view2"
-                    app:cardCornerRadius="360dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginVertical="70dp"
                     android:innerRadius="0dp"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginVertical="20dp"
-                    android:shape="ring"
+                    android:orientation="horizontal"
                     android:outlineAmbientShadowColor="@color/defaulBlue"
-                    android:outlineSpotShadowColor="@color/defaulBlue"
-                    android:thicknessRatio="5">
-                    <ImageView
-                        android:layout_height="match_parent"
-                        android:layout_width="match_parent"
-                        android:id="@+id/image_view"
+                    android:shape="ring"
+                    android:thicknessRatio="5"
+                    app:cardCornerRadius="150dp">
 
-                        android:src="@drawable/logo_size_big"
+                    <ImageView
+                        android:id="@+id/image_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true">
-                    </ImageView>
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/logo_size_big"></ImageView>
                 </androidx.cardview.widget.CardView>
 
                 <TextView
