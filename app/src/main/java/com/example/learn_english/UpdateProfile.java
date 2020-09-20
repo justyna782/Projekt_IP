@@ -5,6 +5,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.learn_english.model.FireBaseModel;
+import com.example.learn_english.model.FlashCard;
+import com.example.learn_english.model.UserProfile;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -12,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class UpdateProfile extends AppCompatActivity {
 
@@ -58,8 +64,10 @@ public class UpdateProfile extends AppCompatActivity {
             public void onClick(View v) {
                 String name = newUserName.getText().toString();
                 String email = newUserEmail.getText().toString();
-                    UserProfile userProfile = new UserProfile(email, name);
-                    databaseReference.setValue(userProfile);
+
+              //  UserProfile userProfile = UserProfile.getInstance(email, name);
+//                    databaseReference.setValue(UserProfile.getInstance());
+                FireBaseModel.getInstanceOfFireBase().UpdateProfile(email,name);
                     finish();
                 }
         });

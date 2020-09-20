@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 
 import androidx.annotation.Nullable;
 
@@ -121,7 +122,7 @@ public class DataBase extends SQLiteOpenHelper {
 
         cursorQuestion.close();
         db.close();
-        return new FlashCard(englishText, polishText, PrimaryKey, solved, ImagePath);
+        return new FlashCard(englishText, polishText, ImagePath);
     }
 
 }

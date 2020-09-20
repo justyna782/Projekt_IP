@@ -22,6 +22,10 @@ android {
     buildFeatures {
         dataBinding true
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
 }
 
@@ -54,6 +58,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:18.0.0'
     implementation 'com.google.firebase:firebase-storage:18.1.0'
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.firebaseui:firebase-ui-storage:6.2.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.firebase:firebase-ml-natural-language:22.0.0'
     implementation 'com.google.firebase:firebase-ml-natural-language-language-id-model:20.0.7'
     implementation 'com.google.firebase:firebase-ml-natural-language-translate-model:20.0.7'

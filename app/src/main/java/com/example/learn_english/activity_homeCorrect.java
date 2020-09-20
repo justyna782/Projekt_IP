@@ -8,7 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.learn_english.model.FireBaseModel;
+import com.example.learn_english.model.UserProfile;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -44,6 +45,7 @@ public class activity_homeCorrect extends AppCompatActivity {
         profileName = (TextView) headerView.findViewById(R.id.tvProfileName);
         profileEmail = (TextView) headerView.findViewById(R.id.tvEmail);
 
+
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -61,23 +63,23 @@ public class activity_homeCorrect extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+//        firebaseAuth = FirebaseAuth.getInstance();
+//        firebaseDatabase = FirebaseDatabase.getInstance();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
-                profileName.setText(userProfile.getUserName());
-                profileEmail.setText(userProfile.getUserEmail());
-            }
+        FireBaseModel.getInstanceOfFireBase().getDataAboutLastProfile(this);
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(activity_homeCorrect.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                UserProfile.getInstance().setFromDataBase(dataSnapshot.getValue(UserProfile.class));
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                Toast.makeText(activity_homeCorrect.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
 

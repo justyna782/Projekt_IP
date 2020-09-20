@@ -2,11 +2,12 @@ package com.example.learn_english;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.learn_english.model.UserProfile;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -15,14 +16,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends FragmentActivity {
 
 
     private TextView profileName, profileEmail;
     private Button profileUpdate, changePassword,logout;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
+    private TextView Today;
+
 
 
     @Override
@@ -31,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         profileName = findViewById(R.id.tvProfileName);
+        Today = findViewById(R.id.TodayText);
         profileEmail = findViewById(R.id.tvProfileEmail);
         profileUpdate = findViewById(R.id.btnProfileUpdate);
         changePassword = findViewById(R.id.btnChangePassword);
@@ -48,6 +53,7 @@ public class ProfileActivity extends AppCompatActivity {
                 UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
                 profileName.setText("Imię: " + userProfile.getUserName());
                 profileEmail.setText("Email: " + userProfile.getUserEmail());
+                Today.setText("Email: " + userProfile.getToDay());
             }
 
             @Override
@@ -70,6 +76,8 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
     }
+
 
 }

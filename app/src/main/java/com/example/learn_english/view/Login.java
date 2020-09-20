@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.learn_english.model.FireBaseModel;
 import com.example.learn_english.ui.home.HomeView;
 import com.example.learn_english.ui.home.HomeViewModel;
 import com.example.learn_english.PasswordActivity;
@@ -57,7 +58,7 @@ public class Login extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
 
-        FirebaseUser user = firebaseAuth.getCurrentUser();
+        FirebaseUser user = FireBaseModel.getInstanceOfFireBase().getFirebaseAuth().getCurrentUser();
 
         if (user != null) {
             finish();

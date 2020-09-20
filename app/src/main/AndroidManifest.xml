@@ -32,7 +32,7 @@
         <activity android:name=".UpdatePassword" />
         <activity android:name=".UpdateProfile" />
         <activity
-            android:name=".UserProfile"
+            android:name=".model.UserProfile"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".view.Login"

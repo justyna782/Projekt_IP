@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/tlo"
-    tools:context=".ui.DetectText.DetectTextView">
+    tools:context=".ProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,35 +59,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
-            android:gravity="bottom"
+            android:gravity="center"
             android:orientation="horizontal"
+
             android:paddingTop="35dp"
             android:paddingBottom="35dp"
             android:weightSum="3">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nauczone"
-                    android:textSize="20sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Nauczone"-->
+<!--                    android:textSize="20sp" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:text="125"
-                    android:textColor="@color/colorBlue"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:text="125"-->
+<!--                    android:textColor="@color/colorBlue"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textStyle="bold" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -103,39 +104,39 @@
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/TodayText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
-                    android:text="1205"
                     android:textColor="@color/colorBlue"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pozostało"
-                    android:textSize="20sp" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Pozostało"-->
+<!--                    android:textSize="20sp" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:text="360"
-                    android:textColor="@color/colorBlue"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:text="360"-->
+<!--                    android:textColor="@color/colorBlue"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textStyle="bold" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
         </LinearLayout>
     </LinearLayout>
 

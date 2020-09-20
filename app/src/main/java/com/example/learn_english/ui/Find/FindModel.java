@@ -48,8 +48,9 @@ public class FindModel extends Fragment {
     private StringBuilder stringBuilder=new StringBuilder();
     private FloatingActionButton floatingActionButton;
     private String first;
-    private FirebaseLanguageIdentification firebaseLanguageIdentification;
     Activity activity;
+
+    private Uri testImage;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -66,12 +67,11 @@ public class FindModel extends Fragment {
         imageView = root.findViewById(R.id.image_view);
         translatorText=root.findViewById(R.id.translator_text);
         pickImageBtn = root.findViewById(R.id.pick_image_btn);
-        firebaseLanguageIdentification = FirebaseNaturalLanguage.getInstance().getLanguageIdentification();
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), AddFlashCardView.class);
-                i.putExtra("image",finalFilePath);
+                i.putExtra("image",testImage.toString());
                 i.putExtra("text",first);
                 startActivity(i);
             }
@@ -118,8 +118,9 @@ public class FindModel extends Fragment {
             if(requestCode==1)
             {
                 Uri uri = data.getData();
-
                 if(uri!=null) {
+
+                    testImage = uri;
                     String [] filePath={MediaStore.Images.Media.DATA};
                     Cursor cursor = activity.getContentResolver().query(uri, filePath, null, null, null);
                     cursor.moveToFirst();

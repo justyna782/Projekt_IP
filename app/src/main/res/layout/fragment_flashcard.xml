@@ -76,6 +76,19 @@
                     android:text="Sprawdź"
                     android:textColor="@color/colorWhite" />
 
+
+                <Button
+                    android:id="@+id/Remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/rounded_button"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text="Usuń"
+                    android:textColor="@color/colorWhite" />
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
