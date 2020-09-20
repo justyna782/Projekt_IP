@@ -43,15 +43,15 @@ public class UserProfile {
 
     public void setFromDataBase(UserProfile userProfile)
     {
-
-            this.toDay = userProfile.toDay;
-            this.userName = userProfile.userName;
-            this.userEmail = userProfile.userEmail;
-            this.userFlashCards = userProfile.userFlashCards;
-            this.learned = userProfile.learned;
-            this.left = userProfile.left;
-            FireBaseModel.getInstanceOfFireBase().getDataOfFishCard(this);
-
+if(userProfile != null) {
+    this.toDay = userProfile.toDay;
+    this.userName = userProfile.userName;
+    this.userEmail = userProfile.userEmail;
+    this.userFlashCards = userProfile.userFlashCards;
+    this.learned = userProfile.learned;
+    this.left = userProfile.left;
+    FireBaseModel.getInstanceOfFireBase().getDataOfFishCard(this);
+}
     }
 
     public void takeFish() {

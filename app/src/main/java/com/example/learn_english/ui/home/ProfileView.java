@@ -39,11 +39,9 @@ public class ProfileView extends Fragment {
         profileName = root.findViewById(R.id.tvProfileName);
         profileEmail = root.findViewById(R.id.tvProfileEmail);
         Today = root.findViewById(R.id.TodayText);
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
 
 
-        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        DatabaseReference databaseReference = FireBaseModel.getInstanceOfFireBase().getDatabaseReference();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override

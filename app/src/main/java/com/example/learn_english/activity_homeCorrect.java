@@ -28,6 +28,7 @@ import androidx.appcompat.widget.Toolbar;
 
 public class activity_homeCorrect extends AppCompatActivity {
 
+
     private TextView profileName, profileEmail;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -66,7 +67,8 @@ public class activity_homeCorrect extends AppCompatActivity {
 //        firebaseAuth = FirebaseAuth.getInstance();
 //        firebaseDatabase = FirebaseDatabase.getInstance();
 
-        FireBaseModel.getInstanceOfFireBase().getDataAboutLastProfile(this);
+        if(!FireBaseModel.isLogin)
+            FireBaseModel.getInstanceOfFireBase().getDataAboutLastProfile(this);
 
 //        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
 //        databaseReference.addValueEventListener(new ValueEventListener() {

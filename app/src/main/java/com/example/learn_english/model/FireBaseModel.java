@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.learn_english.RegistrationActivity;
 import com.example.learn_english.activity_homeCorrect;
 import com.example.learn_english.view.Login;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -39,7 +40,7 @@ import java.util.UUID;
 
 public class FireBaseModel {
 
-
+    public static boolean isLogin = false;
     private static FireBaseModel instance = null;
 
     public static FireBaseModel getInstanceOfFireBase() {
@@ -85,6 +86,8 @@ public class FireBaseModel {
         password = password.trim();
 
         String finalEmail = email;
+        databaseReference = null;
+        firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -104,12 +107,37 @@ public class FireBaseModel {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if (firebaseAuth.getUid() != null)
-            databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+
 
     }
 
+    private int counter = 5;
+    public void Login(String userName, String userPassword, AppCompatActivity activity)
+    {
+        FireBaseModel.getInstanceOfFireBase().getFirebaseAuth().signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(activity, "Zalogowano pomyślnie", Toast.LENGTH_SHORT).show();
+                    getDataAboutLastProfile();
+                    activity.startActivity(new Intent(activity, activity_homeCorrect.class));
+
+                } else {
+                    Toast.makeText(activity, "Błąd logowania!", Toast.LENGTH_SHORT).show();
+                    counter--;
+                    Toast.makeText(activity,"Liczba pozostałych prób: " + counter, Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+
+    }
+
+
+
     public void DeleteFromStorage(FlashCard flasz) {
+        if (databaseReference == null && firebaseAuth.getUid() != null)
+            databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -152,15 +180,21 @@ public class FireBaseModel {
 
     }
 
+
+
+
     private void sendUserData(String email, String name) {
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         UserProfile userProfile = UserProfile.getInstance(email, name);
+        if (databaseReference == null && firebaseAuth.getUid() != null)
+            databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
         databaseReference.setValue(userProfile);
     }
 
     public void getDataAboutLastProfile(Activity activity) {
-        databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        if (databaseReference == null && firebaseAuth.getUid() != null)
+            databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -170,6 +204,22 @@ public class FireBaseModel {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(activity, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    public void getDataAboutLastProfile() {
+      //  if (databaseReference == null && firebaseAuth.getUid() != null)
+            databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+            databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                UserProfile.getInstance().setFromDataBase(dataSnapshot.getValue(UserProfile.class));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
             }
         });
     }

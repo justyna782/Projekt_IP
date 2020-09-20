@@ -88,26 +88,12 @@ public class Login extends AppCompatActivity {
     }
 
     private void validate(String userName, String userPassword) {
-
-        firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    progressDialog.dismiss();
-                    Toast.makeText(Login.this, "Zalogowano pomyślnie", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(com.example.learn_english.view.Login.this, activity_homeCorrect.class));
-
-                } else {
-                    Toast.makeText(com.example.learn_english.view.Login.this, "Błąd logowania!", Toast.LENGTH_SHORT).show();
-                    counter--;
-                    Info.setText("Liczba pozostałych prób: " + counter);
-                    progressDialog.dismiss();
-                    if (counter == 0) {
-                        Login.setEnabled(false);
-                    }
-                }
-            }
-        });
+    FireBaseModel.isLogin = true;
+        FireBaseModel.getInstanceOfFireBase().Login(userName,userPassword,this);
+        if (counter == 0) {
+            counter--;
+            Login.setEnabled(false);
+        }
 
 
     }
