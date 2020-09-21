@@ -19,8 +19,8 @@ Celem projektu było stworzenie aplikacji do nauki angielskeigo. Aplikacja wyró
 Wszystkie założenia udało się w pełni zrealizować.
 
 
-
-[![Watch the video](https://img.youtube.com/vi/NbqwgA3gB5E/default.jpg)](https://youtu.be/NbqwgA3gB5E)
+![Farmers Market Finder Demo](images/eBiom_gif.gif)
+[Link do screencasta](https://www.youtube.com/watch?v=NbqwgA3gB5E&feature=youtu.be)
 
 ## Instalacja aplikacji
 APK aplikacji, dzięki któremu możliwe jest zainstalowanie aplikacji można znaleźć pod linkiem:
