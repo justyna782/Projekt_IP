@@ -59,7 +59,8 @@
                     android:paddingLeft="40dp"
                     android:paddingRight="40dp"
                     android:text="TAK"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@color/colorWhite"
+                    android:layout_marginRight="50dp" />
 
                 <Button
                     android:id="@+id/btnMenu"

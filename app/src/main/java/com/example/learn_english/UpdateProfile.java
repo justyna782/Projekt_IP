@@ -7,7 +7,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.learn_english.model.FireBaseModel;
-import com.example.learn_english.model.FlashCard;
 import com.example.learn_english.model.UserProfile;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -15,19 +14,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class UpdateProfile extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     private EditText newUserName, newUserEmail;
     private Button save;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
-
-    private static final String TAG = "MainActivity";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,12 +60,9 @@ public class UpdateProfile extends AppCompatActivity {
             public void onClick(View v) {
                 String name = newUserName.getText().toString();
                 String email = newUserEmail.getText().toString();
-
-              //  UserProfile userProfile = UserProfile.getInstance(email, name);
-//                    databaseReference.setValue(UserProfile.getInstance());
-                FireBaseModel.getInstanceOfFireBase().UpdateProfile(email,name);
-                    finish();
-                }
+                FireBaseModel.getInstanceOfFireBase().UpdateProfile(email, name);
+                finish();
+            }
         });
     }
 }

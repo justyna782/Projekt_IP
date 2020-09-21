@@ -23,8 +23,6 @@
             android:name=".activity_homeCorrect"
             android:label="@string/title_activity_home_correct"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ProfileActivity" />
         <activity android:name=".ui.AddFlashCard.AddFlashCardView" />
         <activity android:name=".Logout" />
         <activity android:name=".PasswordActivity" />

@@ -1,14 +1,14 @@
 package com.example.learn_english;
 
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.learn_english.ui.home.HomeView;
 import com.example.learn_english.view.Login;
 import com.google.firebase.auth.FirebaseAuth;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Logout extends AppCompatActivity {
 

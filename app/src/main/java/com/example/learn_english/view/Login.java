@@ -2,8 +2,6 @@ package com.example.learn_english.view;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -12,20 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.learn_english.model.FireBaseModel;
-import com.example.learn_english.ui.home.HomeView;
-import com.example.learn_english.ui.home.HomeViewModel;
 import com.example.learn_english.PasswordActivity;
 import com.example.learn_english.R;
 import com.example.learn_english.RegistrationActivity;
 import com.example.learn_english.activity_homeCorrect;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.example.learn_english.model.FireBaseModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
 
@@ -39,8 +33,6 @@ public class Login extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private TextView forgotPassword;
 
-
-    String name = "elo";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +42,7 @@ public class Login extends AppCompatActivity {
         Password = findViewById(R.id.etPassword);
         Info = findViewById(R.id.tvInfo);
         Login = findViewById(R.id.btnLogin);
-       userRegistration = findViewById(R.id.tvRegister);
+        userRegistration = findViewById(R.id.tvRegister);
         forgotPassword = findViewById(R.id.tvForgotPassword);
 
         Info.setText("Liczba pozostałych prób: 5");
@@ -88,8 +80,8 @@ public class Login extends AppCompatActivity {
     }
 
     private void validate(String userName, String userPassword) {
-    FireBaseModel.isLogin = true;
-        FireBaseModel.getInstanceOfFireBase().Login(userName,userPassword,this);
+        FireBaseModel.isLogin = true;
+        FireBaseModel.getInstanceOfFireBase().Login(userName, userPassword, this);
         if (counter == 0) {
             counter--;
             Login.setEnabled(false);
@@ -100,7 +92,7 @@ public class Login extends AppCompatActivity {
 
 
     public void onButtonClick(View view) {
-        ImageButton button = (ImageButton)view;
+        ImageButton button = (ImageButton) view;
         button.setSelected(!button.isSelected());
         EditText editText = findViewById(R.id.etPassword);
 

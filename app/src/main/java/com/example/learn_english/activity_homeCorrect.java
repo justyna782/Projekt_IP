@@ -18,13 +18,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 public class activity_homeCorrect extends AppCompatActivity {
 
@@ -47,41 +47,36 @@ public class activity_homeCorrect extends AppCompatActivity {
         profileEmail = (TextView) headerView.findViewById(R.id.tvEmail);
 
 
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(activity_homeCorrect.this, FlashCardView.class));
-//            }
-//        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-              R.id.nav_profile,  R.id.nav_find, R.id.nav_detectTextId, R.id.nav_flashcard, R.id.nav_translatorId)
+                R.id.nav_profile, R.id.nav_find, R.id.nav_detectTextId, R.id.nav_flashcard, R.id.nav_translatorId)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-//        firebaseAuth = FirebaseAuth.getInstance();
-//        firebaseDatabase = FirebaseDatabase.getInstance();
-
-        if(!FireBaseModel.isLogin)
+        if (!FireBaseModel.isLogin)
             FireBaseModel.getInstanceOfFireBase().getDataAboutLastProfile(this);
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
 
-//        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                UserProfile.getInstance().setFromDataBase(dataSnapshot.getValue(UserProfile.class));
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                Toast.makeText(activity_homeCorrect.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                UserProfile userProfile = dataSnapshot.getValue(UserProfile.class);
+                profileName.setText(userProfile.getUserName());
+                profileEmail.setText(userProfile.getUserEmail());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(activity_homeCorrect.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
@@ -118,9 +113,9 @@ public class activity_homeCorrect extends AppCompatActivity {
             startActivity(startIntent);
         } else if (id == R.id.change_password) {
 
-        Intent startIntent = new Intent(getApplicationContext(), UpdatePassword.class);
-        startActivity(startIntent);
-    }
+            Intent startIntent = new Intent(getApplicationContext(), UpdatePassword.class);
+            startActivity(startIntent);
+        }
 
         return super.onOptionsItemSelected(item);
     }

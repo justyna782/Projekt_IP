@@ -37,6 +37,16 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <EditText
+                android:id="@+id/word_to_translate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName"
+                android:textColor="@color/blackcolor"
+                android:textSize="24sp" />
+
             <Button
                 android:id="@+id/btnTranstale"
                 android:layout_width="wrap_content"
@@ -48,16 +58,6 @@
                 android:paddingRight="30dp"
                 android:text="Tłumacz"
                 android:textColor="@color/colorWhite" />
-
-            <EditText
-                android:id="@+id/word_to_translate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:gravity="center"
-                android:inputType="textPersonName"
-                android:textColor="@color/blackcolor"
-                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/word_after_translation"
