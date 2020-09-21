@@ -18,9 +18,13 @@ Celem projektu było stworzenie aplikacji do nauki angielskeigo. Aplikacja wyró
 
 Wszystkie założenia udało się w pełni zrealizować.
 
+
+
+[![Watch the video](https://img.youtube.com/vi/NbqwgA3gB5E/default.jpg)](https://youtu.be/NbqwgA3gB5E)
+
 ## Instalacja aplikacji
 APK aplikacji, dzięki któremu możliwe jest zainstalowanie aplikacji można znaleźć pod linkiem:
-https://drive.google.com/file/d/1V6R8sJiYsDOBxIKgw84-yu5HF0W4UuQW/view?usp=sharing
+https://drive.google.com/file/d/1TWtPrVPpvkCY5Sc4JfYPhMMw3S_UhmRu/view?usp=sharing
 
 Wersja: Android Studio 4.0.1
 
