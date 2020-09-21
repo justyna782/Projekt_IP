@@ -23,6 +23,7 @@ APK aplikacji, dzięki któremu możliwe jest zainstalowanie aplikacji można zn
 https://drive.google.com/file/d/1V6R8sJiYsDOBxIKgw84-yu5HF0W4UuQW/view?usp=sharing
 
 Wersja: Android Studio 4.0.1
+
 Autorzy projektu: Justyna Twardzik i Mateusz Pacan
 
 
