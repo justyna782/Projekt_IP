@@ -20,7 +20,8 @@ Wszystkie założenia udało się w pełni zrealizować.
 
 
 ![Farmers Market Finder Demo](images/eBiom_gif.gif)
-[Link do screencasta](https://www.youtube.com/watch?v=NbqwgA3gB5E&feature=youtu.be)
+
+[Link do screencasta](https://youtu.be/NbqwgA3gB5E)
 
 ## Instalacja aplikacji
 APK aplikacji, dzięki któremu możliwe jest zainstalowanie aplikacji można znaleźć pod linkiem:
