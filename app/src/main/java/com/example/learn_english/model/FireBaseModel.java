@@ -181,8 +181,6 @@ public class FireBaseModel {
     }
 
 
-
-
     private void sendUserData(String email, String name) {
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();

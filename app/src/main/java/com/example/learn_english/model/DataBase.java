@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.net.Uri;
 
 import androidx.annotation.Nullable;
 
@@ -16,8 +15,8 @@ public class DataBase extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "FishCardBase";
     private static final int DATABASE_VERSION = 1;
     private final String QuestionPrimary = "QuestionID";
-    private final String EnglishText =  "EnglishText";
-    private final String PolishText =  "PolishText";
+    private final String EnglishText = "EnglishText";
+    private final String PolishText = "PolishText";
     private final String FlashCardTable = "Question";
     private final String FlashCardFolder = "FlashCardFolder";
     private final String ImagePath = "ImagePath";
@@ -29,8 +28,8 @@ public class DataBase extends SQLiteOpenHelper {
     private final String UserEloTable = "UserEloTable";
     private final String UserElo = "UserElo";
 
-    public static synchronized DataBase getInstance(Context context){
-        if(dInstance == null){
+    public static synchronized DataBase getInstance(Context context) {
+        if (dInstance == null) {
             dInstance = new DataBase(context.getApplicationContext());
         }
         return dInstance;
@@ -50,16 +49,16 @@ public class DataBase extends SQLiteOpenHelper {
         String createQuestion = "CREATE TABLE " + FlashCardTable + " ("
                 + QuestionPrimary + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + EnglishText + " TEXT, "
-                + PolishText  + " TEXT, "
+                + PolishText + " TEXT, "
                 + QuestionElo + " INTEGER, "
                 + QuestionSolved + " INTEGER, "
                 + ImagePath + " VARCHAR(255), "
                 + FlashCardFolder + " INTEGER);";
         db.beginTransaction();
-        try{
+        try {
             db.execSQL(createQuestion);
             db.setTransactionSuccessful();
-        }finally {
+        } finally {
             db.endTransaction();
         }
     }
@@ -69,38 +68,39 @@ public class DataBase extends SQLiteOpenHelper {
 
         String dropAnswer = "DROP TABLE IF EXISTS " + FlashCardTable;
         db.beginTransaction();
-        try{
+        try {
             db.execSQL(dropAnswer);
-        }finally {
+        } finally {
             db.endTransaction();
         }
         onCreate(db);
     }
 
-    public void addQuestionAndAnswer(String englishText, String polishText, String imagePath){
+    public void addQuestionAndAnswer(String englishText, String polishText, String imagePath) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(EnglishText, englishText);
         values.put(PolishText, polishText);
         values.put(QuestionSolved, 0);
-        values.put(ImagePath,imagePath);
+        values.put(ImagePath, imagePath);
         db.insert(FlashCardTable, null, values);
         db.close();
     }
-    public boolean deleteFlashcard(int PrimatyKey){
+
+    public boolean deleteFlashcard(int PrimatyKey) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         boolean bQuestion = db.delete(FlashCardTable, QuestionPrimary + " = " + Integer.toString(PrimatyKey), null) > 0;
 
         db.close();
-        if(!bQuestion){
+        if (!bQuestion) {
             return false;
         }
         return true;
     }
 
-    public FlashCard getFlashcard(int PrimaryKey){
+    public FlashCard getFlashcard(int PrimaryKey) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursorQuestion = db.rawQuery("SELECT * FROM " + FlashCardTable + " WHERE " + QuestionPrimary + " = " + PrimaryKey, null);
@@ -112,8 +112,7 @@ public class DataBase extends SQLiteOpenHelper {
         boolean solved = false;
 
 
-
-        while(cursorQuestion.moveToNext()){
+        while (cursorQuestion.moveToNext()) {
             englishText = cursorQuestion.getString(1);
             polishText = cursorQuestion.getString(2);
             solved = (0 != cursorQuestion.getInt(3));

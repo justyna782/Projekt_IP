@@ -1,6 +1,6 @@
 package com.example.learn_english.ui.translator;
 
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.example.learn_english.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,33 +20,30 @@ import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguag
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateRemoteModel;
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslator;
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslatorOptions;
-
 import java.util.Set;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 public class TranslatorView extends Fragment {
 
+    Activity activity;
     private EditText mSourcetext;
     private Button mTranslateBtn, changeLanguages;
     private TextView mTranslatedText;
     private String sourceText;
     private CharSequence lang, word_to_translate, word_after_translation;
 
-    Activity activity;
-
-
+    @SuppressLint("RestrictedApi")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = this.getActivity();
         View root = inflater.inflate(R.layout.fragment_translator, container, false);
-
         mSourcetext = root.findViewById(R.id.word_to_translate);
         mTranslateBtn = root.findViewById(R.id.btnTranstale);
         mTranslatedText = root.findViewById(R.id.word_after_translation);
         changeLanguages = root.findViewById(R.id.change_languages);
+
 
         changeLanguages.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,8 +72,10 @@ public class TranslatorView extends Fragment {
                 lang = changeLanguages.getText();
                 if (lang.equals("PL -> EN")) {
                     translatePlEn();
+                    word_after_translation = mTranslatedText.getText();
                 } else {
                     translateEnPl();
+                    word_after_translation = mTranslatedText.getText();
                 }
             }
         });
@@ -209,13 +207,13 @@ public class TranslatorView extends Fragment {
                         .setSourceLanguage(FirebaseTranslateLanguage.EN)
                         .setTargetLanguage(FirebaseTranslateLanguage.PL)
                         .build();
-        final FirebaseTranslator englishGermanTranslator =
+        final FirebaseTranslator englishTranslator =
                 FirebaseNaturalLanguage.getInstance().getTranslator(options);
 
         FirebaseModelDownloadConditions conditions = new FirebaseModelDownloadConditions.Builder()
                 .requireWifi()
                 .build();
-        englishGermanTranslator.downloadModelIfNeeded(conditions)
+        englishTranslator.downloadModelIfNeeded(conditions)
                 .addOnSuccessListener(
                         new OnSuccessListener<Void>() {
                             @Override
@@ -233,7 +231,7 @@ public class TranslatorView extends Fragment {
                             }
                         });
         sourceText = mSourcetext.getText().toString();
-        englishGermanTranslator.translate(sourceText)
+        englishTranslator.translate(sourceText)
                 .addOnSuccessListener(
                         new OnSuccessListener<String>() {
                             @Override

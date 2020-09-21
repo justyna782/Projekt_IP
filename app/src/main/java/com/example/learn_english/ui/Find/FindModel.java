@@ -1,6 +1,7 @@
 package com.example.learn_english.ui.Find;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -53,6 +54,7 @@ public class FindModel extends Fragment {
     private Uri testImage;
 
 
+    @SuppressLint("RestrictedApi")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +69,8 @@ public class FindModel extends Fragment {
         imageView = root.findViewById(R.id.image_view);
         translatorText=root.findViewById(R.id.translator_text);
         pickImageBtn = root.findViewById(R.id.pick_image_btn);
+        floatingActionButton.setVisibility(View.INVISIBLE);
+
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,6 +141,7 @@ public class FindModel extends Fragment {
                     FirebaseVisionImageLabeler dectector = FirebaseVision.getInstance().getOnDeviceImageLabeler();
                     dectector.processImage(image).addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionImageLabel>>()
                     {
+                        @SuppressLint("RestrictedApi")
                         @Override
                         public void onSuccess(List<FirebaseVisionImageLabel> firebaseVisionImageLabels)
                         {
@@ -147,15 +152,10 @@ public class FindModel extends Fragment {
                                    first = label.getText();
                                 double percent = Math.round(label.getConfidence() * 100) ;
                                 stringBuilder.append("Image label: ").append(label.getText()).append("\n").append("Precision: ").append(percent).append("% \n");
+                                floatingActionButton.setVisibility(View.VISIBLE);
                             }
 
                             detectedText.setText(stringBuilder.toString());
-
-
-
-
-
-
                         }
                     });
                 }
@@ -178,7 +178,7 @@ public class FindModel extends Fragment {
 
 
 
-   
+
 
 
 

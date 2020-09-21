@@ -15,20 +15,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.learn_english.DetectText;
 import com.example.learn_english.R;
-import com.example.learn_english.ui.AddFlashCard.AddFlashCardView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditions;
 import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage;
@@ -48,7 +43,6 @@ public class DetectTextView extends Fragment {
     private TextView detectedText, translatorText;
     private FirebaseAuth firebaseAuth;
 
-    private FloatingActionButton floatingActionButton;
     private ImageView imageView;
     private StringBuilder stringBuilder=new StringBuilder();
     private FirebaseLanguageIdentification firebaseLanguageIdentification;
@@ -68,15 +62,6 @@ public class DetectTextView extends Fragment {
         translatorText= root.findViewById(R.id.translator_text);
         pickImageBtn = root.findViewById(R.id.pick_image_btn);
         firebaseLanguageIdentification = FirebaseNaturalLanguage.getInstance().getLanguageIdentification();
-        floatingActionButton = root.findViewById(R.id.fab);
-
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), AddFlashCardView.class);
-                startActivity(i);
-            }
-        });
 
         pickImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
